@@ -1,7 +1,39 @@
 import Image from "next/image";
-
+import Navbar from "./components/navbar";
 export default function Home() {
+  const containerStyle = {
+    backgroundPosition: '50%',
+    backgroundImage: `url('images/home-background.webp')`,
+    height: '100%',
+  }
+
   return (
+    <main className="h-full">
+      <section className="mb-40 h-full">
+        <div className="relative overflow-hidden bg-cover bg-no-repeat" style={containerStyle}>
+          <div
+            className="absolute top-0 right-0 bottom-0 left-0 h-full overflow-hidden w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed">
+            <div className="flex h-full items-center justify-center">
+              <div className="px-6 text-center text-white md:px-12">
+                <h1 className="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+                  The best books in the world <br /><span>for your curiosity</span>
+                </h1>
+                <button type="button"
+                  className="rounded border-2 border-neutral-50 px-[46px] pt-[14px] pb-[12px] text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200"
+                  data-te-ripple-init data-te-ripple-color="light">
+                  Explore New Frontiers
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function nextHome() {
+  var x = (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
