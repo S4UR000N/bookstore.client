@@ -5,8 +5,6 @@ class HttpService {
     {
         let res = await fetch(url, requestOptions);
 
-        console.log("HTTP SERVICE VALIDATE AND RETURN");
-        
         if (!res.bodyUsed && res.headers.get('Content-Length') === '0') {
             let response = new ResponseModel<boolean>();
             response.statusCode = res.status;
