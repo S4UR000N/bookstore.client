@@ -1,5 +1,4 @@
 'use client';
-import { useRouter } from 'next/navigation'
 import Link from 'next/link';
 import { useState } from 'react';
 import AuthService from '../../services/AuthService';
@@ -7,7 +6,6 @@ import LoginFormModel from '../../models/form/LoginFormModel';
 import JwtService from '../../services/JwtService';
 
 export default function Login() {
-  const router = useRouter()
   const [form, setForm] = useState(new LoginFormModel());
   let errors = new Array<string>();
 
