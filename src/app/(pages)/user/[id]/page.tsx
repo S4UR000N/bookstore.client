@@ -35,7 +35,7 @@ export default function User({ params }: { params: { id: number } }) {
                 setAddRemoveBooks(addRemoveBooks);
             }
         }
-        else if ("Remove") {
+        else if (fn == "Remove") {
             if (addRemoveBooks?.RemoveBooks.includes(id)) {
                 addRemoveBooks.RemoveBooks = addRemoveBooks?.RemoveBooks.filter(b => b !== id);
                 setAddRemoveBooks(addRemoveBooks);

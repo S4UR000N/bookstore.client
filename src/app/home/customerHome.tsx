@@ -8,7 +8,7 @@ export default function CustomerHome() {
 
     useEffect(() => {
         UserService.GetUserWithBooksById()
-            .then(ubs => setUserBooks(ubs));
+            .then(ubs => {console.log(ubs); setUserBooks(ubs)});
     }, []); 
     return userBooks?.books
     ? 
