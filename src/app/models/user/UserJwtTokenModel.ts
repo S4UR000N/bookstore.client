@@ -20,7 +20,7 @@ class UserJwtTokenModel {
                 return null; // Invalid format
             }
 
-            const [id, firstName, lastName, role, aud, exp, iss] = values;
+            const [id, firstName, lastName, role, exp, aud, iss] = values;
             return new UserJwtTokenModel(id, firstName, lastName, role, aud, exp, iss);
         }
         return null;

@@ -16,6 +16,10 @@ export default function Auth({
   }
 
   function hasAccess(roles: string, userRole: string) {
+    if (roles === "All" && userRole) 
+    {
+        return true;
+    }
     if (roles) {
         if (userRole) {
             if (!roles.includes(",")) {
@@ -30,5 +34,9 @@ export default function Auth({
         }
         return false
     }
-    return true;
+    if (!userRole)
+    {
+        return true;
+    }
+    return false;
   }

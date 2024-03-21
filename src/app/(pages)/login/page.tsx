@@ -30,7 +30,7 @@ export default function Login() {
     else {
       JwtService.handleJwt(response.result as string);
       alert("Login Successful!");
-      router.push('/');
+      document.location.href = '/';
     }
   }
 

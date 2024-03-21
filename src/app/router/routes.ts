@@ -1,6 +1,7 @@
-export const publicRoutes = ["/"];
+export const publicRoutes = ["/", "/logout"];
 export const protectedRoutes = {
     "/home": ["Admin", "Librarian", "Customer"],
+    "/user/:id": ["Admin", "Librarian"],
 
     hasRoute(route: string): boolean {
         if (this[route] === undefined) {
@@ -9,16 +10,13 @@ export const protectedRoutes = {
         return true;
     },
     hasAccess(route: string, role: string): boolean {
-        console.log("HAS ACCESS???");
-        console.log(this.hasRoute(route));
-        console.log(route);
-        console.log(this[route].includes(role));
-        if (this.hasRoute(route) && this[route].includes(role)) {
-            console.log("true");
+        if (this.hasRoute(this.formattedRoute(route)) && this[this.formattedRoute(route)].includes(role)) {
             return true;
         }
-        console.log("false");
         return false;
+    },
+    formattedRoute(route: string): string {
+        return route.replace(/\/\d+/g, "/:id");
     }
 };
 export const authRoutes = ["/login", "/register"];
